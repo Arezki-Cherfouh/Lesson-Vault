@@ -1,50 +1,36 @@
-# Welcome to your Expo app 👋
+# 📚 LessonVault
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native (Expo) app for students to organize and store lesson photos by academic year, semester, and subject — with full offline storage, infinite folder nesting, and ZIP backup/restore.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **4-level hierarchy** — Years → Semesters → Subjects → Lessons
+- **Infinite folder nesting** — create folders inside folders at any depth
+- **Photo capture** — take photos directly or import from gallery (single or multi-select)
+- **Zoomable image viewer** — pinch to zoom, double-tap to fit, drag to pan
+- **ZIP export/restore** — back up everything and reimport on any device, with full folder structure preserved
+- **Dark / light mode** — manual toggle with system preference fallback
+- **Fully offline** — SQLite database, all files stored locally in app documents
 
-2. Start the app
+## Tech Stack
 
-   ```bash
-   npx expo start
-   ```
+- **Expo** (React Native) · **expo-sqlite** · **expo-file-system** · **expo-image-picker**
+- **JSZip** for export/import · **expo-media-library** · **react-native-safe-area-context**
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Getting Started
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+> Requires a real device or dev build for full camera and storage access. Some features are restricted in Expo Go.
 
-## Learn more
+## Project Structure
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+app/
+  index.tsx   # entire app — screens, DB, theme, ZIP logic
+```
